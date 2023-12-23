@@ -23,8 +23,8 @@ int main(void) {//メイン関数
 	printf("名前を入力してください\n>>>");//指示
 	scanf("%10s", name);//名前を入力
 	putchar('\n');//改行
-	int hero = 10;//プレイヤーのHP
-	int boss = 30;//敵のHP
+	int hero = 90;//プレイヤーのHP
+	int boss = 350;//敵のHP
 
 	for (int turn = 1; 1; turn++){//無限ループ
 		printf("%sのHP：%d　",name, hero);//プレイヤーのHP表示
@@ -35,8 +35,8 @@ int main(void) {//メイン関数
 		printf("\n\nコマンド\n１-攻撃\n２-魔法\n３-防御\n４-逃げる\n>>");//コマンド一覧
 		scanf("%d", &command);//コマンド入力
 
-		int attack = 5;//攻撃
-		int magic = 10;//魔法・必殺
+		int attack = 35;//攻撃
+		int magic = 50;//魔法・必殺
 		int protect = 0;//防御状態 普段はFALSEということで0
 		switch (command)//コマンドによって条件分岐するswitch文
 		{
@@ -63,7 +63,7 @@ int main(void) {//メイン関数
 
 		/*敵のターン*/
 		printf("\n魔王の攻撃\n");
-		int boss_attack[3] = { 2,4,0, };//ターンによって攻撃が違う
+		int boss_attack[3] = { 35,40,0, };//ターンによって攻撃が違う
 		int boss_act = turn % 3;//ターン数に応じて行動変化。余りを用いて。0 1 2のどれか
 		int damege = boss_attack[boss_act];//ダメージ決定
 		if (protect){//条件が真、防御状態なら
